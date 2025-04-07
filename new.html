@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anniversary Message</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    textarea {
+      width: 500px;
+      height: 150px;
+      padding: 10px;
+      font-size: 18px;
+      resize: none;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00aaff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #008ecc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <textarea id="message" placeholder="Write your message here...">happiest anniversary to my girl finally we have completed one year!</textarea><br>
+    <button onclick="speakMessage()">Send</button>
+  </div>
+
+  <script>
+    function speakMessage() {
+      const message = document.getElementById('message').value;
+      const utterance = new SpeechSynthesisUtterance(message);
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
